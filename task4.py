@@ -3,3 +3,11 @@
 # а значение - список элементов данного типа.
 # Для списка: [1, 2, "3", "4", True, 5.5]
 # Ответ:  {int: [1, 2, 5], float: [5.5], str: ["3", "4"], bool: [True]}
+
+l_list = [1, '1', [1,1,1], {1: 'one'}, (1,1), 1.1, 1, 2, {}, 1..__class__, '1.'.__class__]
+
+res = {}
+for item in l_list:
+    res.setdefault(type(item), []).append(item)
+
+print(res)
